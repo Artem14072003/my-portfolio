@@ -11,7 +11,7 @@ import {
 } from "react-icons/ri"
 
 // Компоненты
-import Devimg from "@/components/Devimg";
+import DevImg from "@/components/DevImg";
 import Badge from "@/components/Badge";
 import Socials from "@/components/Socials";
 
@@ -38,8 +38,38 @@ const Hero = () => {
                                     size={18}/></Button>
                             </Link>
                         </div>
+                        <Socials
+                            containerStyle={'flex align-baseline gap-x-6 mx-auto xl:mx-0'}
+                            iconsStyle={'text-foreground transition-all'}
+                        />
                     </div>
-                    <div className={'hidden xl:flex relative'}>Image</div>
+                    <div className={'hidden xl:flex relative'}>
+                        <Badge
+                            endCountNum={2}
+                            badgeText={'Месяца опыта'}
+                            containerStyle={'absolute top-[24%] -left-[5rem]'}
+                            icon={<RiBriefcase4Fill/>}
+                        />
+                        <Badge
+                            endCountNum={6}
+                            badgeText={'Проектов'}
+                            containerStyle={'absolute top-[70%] -left-[1rem]'}
+                            endCountText={'+'}
+                            icon={<RiTodoFill/>}
+                        />
+                        <Badge
+                            endCountNum={1}
+                            badgeText={'Довольный клиент'}
+                            containerStyle={'absolute top-[45%] -right-10'}
+                            icon={<RiTeamFill/>}
+                        />
+                        <div
+                            className={'bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] ' +
+                                'h-[500px] bg-no-repeat absolute -top-1 -right-2'}
+                        />
+                        <DevImg containerStyle={'bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom'}
+                                imgSrc={'/hero/developer.png'}/>
+                    </div>
                 </div>
                 <div className={'hidden md:flex absolute left-2/4 bottom-44 xl:bottom-12 animate-bounce'}>
                     <RiArrowDownSLine
